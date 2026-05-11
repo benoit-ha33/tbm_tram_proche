@@ -16,18 +16,3 @@ Intégration Home Assistant pour afficher les prochains passages TBM autour de s
 - Compatible HACS
 
 ## Installation manuelle
-
-Copier le dossier :
-
-```text
-custom_components/tbm_tram_proche
-
-## Captures d’écran
-
-### Dashboard Home Assistant
-
-![Dashboard Home Assistant](screenshots/dashboard-ha.jpg)
-
-### Widget iPhone Scriptable
-
-![Widget iPhone Scriptable](screenshots/widget-iphone.jpg)
