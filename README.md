@@ -1,5 +1,9 @@
 # TBM Tram Proche
 <p align="center">
+  <img src="custom_components/tbm_tram_proche/logo.png" width="180">
+</p>
+
+<p align="center">
   <img src="screenshots/banner.jpg">
 </p>
 
