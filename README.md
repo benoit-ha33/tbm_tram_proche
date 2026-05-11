@@ -34,4 +34,20 @@ Intégration Home Assistant pour afficher les prochains passages TBM autour de s
 
 </p>
 
+## Fonctionnement
+
+L’intégration utilise la géolocalisation Home Assistant pour détecter automatiquement l’arrêt TBM le plus proche.
+
+Les données récupérées incluent :
+
+- Prochains passages en temps réel
+- Retards
+- Annulations
+- Temps à pied jusqu’à l’arrêt
+- Distance jusqu’à l’arrêt
+- Destinations des trams
+- Statut “En approche”
+
+L’intégration crée également un capteur résumé optimisé pour les widgets iPhone et Siri.
+
 ## Installation manuelle
