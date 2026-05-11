@@ -50,4 +50,17 @@ Les données récupérées incluent :
 
 L’intégration crée également un capteur résumé optimisé pour les widgets iPhone et Siri.
 
+## Widget iPhone
+
+Le projet peut être utilisé avec Scriptable sur iPhone pour créer un widget premium affichant :
+
+- Arrêt TBM proche
+- Prochains passages
+- Couleurs des lignes tram
+- Temps à pied
+- Météo
+- Heure de dernière mise à jour
+
+Le widget peut également être utilisé avec Siri via l’application Raccourcis.
+
 ## Installation manuelle
