@@ -47,8 +47,6 @@ class TBMCoordinator(DataUpdateCoordinator):
             _LOGGER.debug("TBM alerts unavailable: %s", error)
 
         for stop in nearby_stops:
-
-        for stop in nearby_stops:
             monitoring_ref = stop.get("area_ref") or stop.get("ref")
             monitoring_raw = await self.api.get_stop_monitoring(monitoring_ref)
             departures = self._extract_departures(monitoring_raw)
