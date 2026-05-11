@@ -62,7 +62,6 @@ class TBMCoordinator(DataUpdateCoordinator):
                     "distance": distance,
                     "walking_minutes": walking_minutes(distance),
                     "departures": departures,
-                    "alerts_raw": alerts_raw,
                 }
 
         nearest = nearby_stops[0] if nearby_stops else None
@@ -74,7 +73,6 @@ class TBMCoordinator(DataUpdateCoordinator):
             "distance": distance,
             "walking_minutes": walking_minutes(distance),
             "departures": [],
-            "alerts_raw": alerts_raw,
         }
 
     def _extract_stops(self, data):
