@@ -402,10 +402,34 @@ extra_styles: |
     100% { transform: scale(0.9); opacity: 0.7; }
   }
 ```
-
 ## Notes
 
 Cette intégration utilise les données ouvertes TBM / Bordeaux Métropole.
+
+## Limitations
+
+Les widgets iPhone utilisent WidgetKit.
+
+Le rafraîchissement des widgets dépend des limitations imposées par iOS et n’est donc pas totalement temps réel.
+
+## Roadmap
+
+- [x] Géolocalisation
+- [x] Horaires temps réel
+- [x] Détection de l’arrêt TBM proche
+- [x] Dashboard Home Assistant premium
+- [x] Widget iPhone Scriptable
+- [x] Siri / Raccourcis iPhone
+- [x] Support HACS
+- [ ] Carte Lovelace dédiée
+- [ ] Support Android
+- [ ] Live Activities iPhone
+- [ ] Application iOS native
+- [ ] Publication HACS officielle
+
+## Crédits
+
+Projet développé autour des données ouvertes TBM / Bordeaux Métropole pour Home Assistant.
 
 ## Licence
 
