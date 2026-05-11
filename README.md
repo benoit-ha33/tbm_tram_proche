@@ -26,7 +26,7 @@ Intégration Home Assistant pour afficher les prochains passages TBM autour de s
 
 <p align="center">
   <img src="screenshots/dashboard-ha.jpg" width="320">
-  <img src="screenshots/widget-iphone.jpg" width="140">
+  <img src="screenshots/widget-iphone.jpg" width="320">
 </p>
 
 ## Fonctionnement
