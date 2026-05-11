@@ -1,7 +1,7 @@
 {
   "domain": "tbm_tram_proche",
   "name": "TBM Tram Proche",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "documentation": "https://github.com/benoit-ha33/tbm_tram_proche",
   "issue_tracker": "https://github.com/benoit-ha33/tbm_tram_proche/issues",
   "codeowners": ["@benoit-ha33"],
