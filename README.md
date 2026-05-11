@@ -1,6 +1,6 @@
 # TBM Tram Proche
 <p align="center">
-  <img src="screenshots/banner.png">
+  <img src="screenshots/banner.jpg">
 </p>
 
 ![Home Assistant](https://img.shields.io/badge/Home%20Assistant-2024+-41BDF5?logo=home-assistant&logoColor=white)
