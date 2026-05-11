@@ -7,6 +7,8 @@
 
 ![iPhone Widget](https://img.shields.io/badge/iPhone-Widget-black?logo=apple)
 
+[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=deaddeaddevil-lang&repository=tbm_tram_proche)
+
 Intégration Home Assistant pour afficher les prochains passages TBM autour de soi en temps réel.
 
 ## Fonctionnalités
