@@ -1,4 +1,3 @@
-# TBM Tram Proche
 <h1 align="center">
   <img src="custom_components/tbm_tram_proche/icon.png" width="42" valign="middle">
   TBM Tram Proche
