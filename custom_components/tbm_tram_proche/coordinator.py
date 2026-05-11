@@ -43,9 +43,7 @@ class TBMCoordinator(DataUpdateCoordinator):
 
         try:
             alerts_raw = await self.api.get_general_messages()
-            _LOGGER.warning("TBM DEBUG ALERTS RAW: %s", alerts_raw)
         except Exception as error:
-            _LOGGER.warning("TBM DEBUG ALERTS ERROR: %s", error)
 
         for stop in nearby_stops:
             monitoring_ref = stop.get("area_ref") or stop.get("ref")
