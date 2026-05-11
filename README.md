@@ -4,10 +4,6 @@
 </h1>
 
 <p align="center">
-  <img src="custom_components/tbm_tram_proche/brand/logo.png" width="180">
-</p>
-
-<p align="center">
   <img src="screenshots/banner.jpg">
 </p>
 
