@@ -1,7 +1,7 @@
 {
   "name": "TBM Tram Proche",
+  "render_readme": true,
   "content_in_root": false,
-  "country": "FR",
-  "homeassistant": "2024.1.0",
-  "render_readme": true
+  "zip_release": false,
+  "homeassistant": "2024.1.0"
 }
