@@ -151,6 +151,257 @@ Exemple :
 ```text
 Dis Siri, prochain tram
 ```
+## Exemple de carte Lovelace
+
+Cette carte utilise `custom:button-card`.
+
+Ajouter manuellement ce YAML dans une carte Lovelace `Manual Card` pour reproduire le dashboard présenté dans les captures.
+
+```yaml
+type: custom:button-card
+entity: sensor.tbm_prochains_passages
+triggers_update:
+  - sensor.tbm_prochains_passages
+  - sensor.temperature_bordeaux
+  - weather.meteo_france_forecast_for_city_bordeaux_aquitaine_33_fr_bordeaux
+show_icon: false
+show_name: false
+show_state: false
+custom_fields:
+  content: |
+    [[[
+      const stop = entity.attributes.stop || "Arrêt inconnu";
+      const distance = entity.attributes.distance || "?";
+      const walking = entity.attributes.walking_minutes || "?";
+      const departures = entity.attributes.departures || [];
+      const logo = entity.attributes.entity_picture || "/local/tbm_tram_proche_images/tbm_logo.png";
+
+      const tempState = states["sensor.temperature_bordeaux"]?.state;
+      const temperature =
+        tempState && tempState !== "unknown" && tempState !== "unavailable"
+          ? tempState
+          : "";
+
+      const weatherState =
+        states["weather.meteo_france_forecast_for_city_bordeaux_aquitaine_33_fr_bordeaux"]?.state || "";
+
+      let weatherIcon = "☁️";
+
+      if (weatherState === "sunny") weatherIcon = "☀️";
+      else if (weatherState === "clear-night") weatherIcon = "🌙";
+      else if (weatherState === "partlycloudy") weatherIcon = "⛅";
+      else if (weatherState === "cloudy") weatherIcon = "☁️";
+      else if (weatherState === "rainy") weatherIcon = "🌧️";
+      else if (weatherState === "pouring") weatherIcon = "🌧️";
+      else if (weatherState === "lightning") weatherIcon = "⛈️";
+      else if (weatherState === "lightning-rainy") weatherIcon = "⛈️";
+      else if (weatherState === "snowy") weatherIcon = "❄️";
+      else if (weatherState === "snowy-rainy") weatherIcon = "🌨️";
+      else if (weatherState === "fog") weatherIcon = "🌫️";
+      else if (weatherState === "windy") weatherIcon = "💨";
+
+      function formatTime(item) {
+        if (item.cancelled) {
+          return `<span class="cancelled">Annulé</span>`;
+        }
+
+        const min = item.minutes;
+        const delay = item.delay || 0;
+
+        let label = "";
+
+        if (item.is_last) {
+          label = min <= 2
+            ? `<span class="last"><span class="last-dot"></span>Dernier tram</span>`
+            : `<span class="last"><span class="last-dot"></span>Dernier tram ${min} min</span>`;
+        } else if (min <= 2) {
+          label = `<span class="approach"><span class="approach-dot"></span>En approche</span>`;
+        } else {
+          label = `${min} min`;
+        }
+
+        if (delay >= 2 && !item.cancelled) {
+          label += ` <span class="delay">+${delay}</span>`;
+        }
+
+        return label;
+      }
+
+      let content = `
+        <div class="header">
+          <div class="left">
+            <div class="title">
+              <img src="${logo}" class="logo">
+              <span>${stop}</span>
+            </div>
+            <div class="distance">📍 Arrêt à ${distance} m · 🚶 ${walking} min à pied</div>
+          </div>
+
+          <div class="weather">
+            <div class="city">Bordeaux</div>
+            <div class="temp">${weatherIcon} ${temperature}°</div>
+          </div>
+        </div>
+      `;
+
+      departures.forEach((item) => {
+        const color = item.color || "#888";
+        const times = (item.times || [])
+          .map(t => formatTime(t))
+          .join(` <span style="color:${color};">/</span> `);
+
+        content += `
+          <div class="row">
+            <div class="top">
+              <span class="badge" style="background:${color};">${item.line}</span>
+              <span class="destination">${item.destination}</span>
+            </div>
+            <div class="times">${times}</div>
+          </div>
+        `;
+      });
+
+      return content;
+    ]]]
+styles:
+  grid:
+    - grid-template-areas: "\"content\""
+    - grid-template-columns: 1fr
+  card:
+    - border-radius: 20px
+    - padding: 14px
+    - background: rgba(70,90,110,0.18)
+    - border: 1px solid rgba(255,255,255,0.08)
+    - box-shadow: 0 4px 14px rgba(0,0,0,0.16)
+  custom_fields:
+    content:
+      - text-align: left
+      - width: 100%
+      - color: var(--primary-text-color)
+extra_styles: |
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+
+  .weather {
+    text-align: right;
+    opacity: 0.9;
+  }
+
+  .city {
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  .temp {
+    font-size: 18px;
+    font-weight: 800;
+  }
+
+  .title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+
+  .logo {
+    width: 40px;
+    height: 26px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  .distance {
+    font-size: 12px;
+    opacity: 0.8;
+  }
+
+  .row {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .top {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4px;
+  }
+
+  .badge {
+    color: white;
+    padding: 1px 7px;
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 800;
+    min-width: 16px;
+    text-align: center;
+  }
+
+  .destination {
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .times {
+    font-size: 12px;
+    font-weight: 700;
+    padding-left: 32px;
+    opacity: 0.95;
+  }
+
+  .approach {
+    color: #FF9800;
+    font-weight: 800;
+  }
+
+  .approach-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #FF9800;
+    border-radius: 50%;
+    margin-right: 5px;
+    animation: pulse 1.5s infinite;
+  }
+
+  .last {
+    color: #F44336;
+    font-weight: 900;
+  }
+
+  .last-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #F44336;
+    border-radius: 50%;
+    margin-right: 5px;
+    animation: pulse 1.2s infinite;
+  }
+
+  .delay {
+    color: #FF9800;
+    font-weight: 900;
+  }
+
+  .cancelled {
+    color: #F44336;
+    font-weight: 900;
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(0.9); opacity: 0.7; }
+    70% { transform: scale(1.4); opacity: 1; }
+    100% { transform: scale(0.9); opacity: 0.7; }
+  }
+```
 
 ## Notes
 
