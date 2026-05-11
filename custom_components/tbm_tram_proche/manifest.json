@@ -2,10 +2,10 @@
   "domain": "tbm_tram_proche",
   "name": "TBM Tram Proche",
   "version": "1.0.0",
-  "documentation": "https://github.com/example/tbm_tram_proche",
-  "issue_tracker": "https://github.com/example/tbm_tram_proche/issues",
+  "documentation": "https://github.com/benoit-ha33/tbm_tram_proche",
+  "issue_tracker": "https://github.com/benoit-ha33/tbm_tram_proche/issues",
   "codeowners": [
-    "@benoit"
+    "@benoit-ha33"
   ],
   "requirements": [],
   "iot_class": "cloud_polling",
