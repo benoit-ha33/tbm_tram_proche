@@ -15,4 +15,14 @@ Intégration Home Assistant pour afficher les prochains passages TBM autour de s
 - Capteur résumé pour widget iPhone / Siri
 - Compatible HACS
 
+## Captures d’écran
+
+### Dashboard Home Assistant
+
+![Dashboard Home Assistant](screenshots/dashboard-ha.jpg)
+
+### Widget iPhone Scriptable
+
+![Widget iPhone Scriptable](screenshots/widget-iphone.jpg)
+
 ## Installation manuelle
