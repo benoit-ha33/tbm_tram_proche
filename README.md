@@ -19,10 +19,10 @@ Intégration Home Assistant pour afficher les prochains passages TBM autour de s
 
 ### Dashboard Home Assistant
 
-![Dashboard Home Assistant](screenshots/dashboard-ha.jpg)
+<img src="screenshots/dashboard-ha.jpg" width="180">
 
 ### Widget iPhone Scriptable
 
-![Widget iPhone Scriptable](screenshots/widget-iphone.jpg)
+<img src="screenshots/widget-iphone.jpg" width="120">
 
 ## Installation manuelle
