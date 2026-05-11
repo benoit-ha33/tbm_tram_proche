@@ -1,4 +1,11 @@
 # TBM Tram Proche
+![Home Assistant](https://img.shields.io/badge/Home%20Assistant-2024+-41BDF5?logo=home-assistant&logoColor=white)
+
+![HACS](https://img.shields.io/badge/HACS-Compatible-41BDF5)
+
+![Platform](https://img.shields.io/badge/Platform-TBM%20Bordeaux-00AEEF)
+
+![iPhone Widget](https://img.shields.io/badge/iPhone-Widget-black?logo=apple)
 
 Intégration Home Assistant pour afficher les prochains passages TBM autour de soi en temps réel.
 
