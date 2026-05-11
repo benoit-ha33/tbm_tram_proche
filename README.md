@@ -1,5 +1,10 @@
+<h1 align="center">
+  <img src="custom_components/tbm_tram_proche/brand/icon.png" width="42" valign="middle">
+  TBM Tram Proche
+</h1>
+
 <p align="center">
-  <img src="https://raw.githubusercontent.com/TONUSER/tbm_tram_proche/main/custom_components/tbm_tram_proche/logo.png" width="180">
+  <img src="custom_components/tbm_tram_proche/brand/logo.png" width="180">
 </p>
 
 <p align="center">
