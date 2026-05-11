@@ -17,12 +17,12 @@ Intégration Home Assistant pour afficher les prochains passages TBM autour de s
 
 ## Captures d’écran
 
-### Dashboard Home Assistant
+<p align="center">
 
-<img src="screenshots/dashboard-ha.jpg" width="180">
+  <img src="screenshots/dashboard-ha.jpg" width="320">
 
-### Widget iPhone Scriptable
+  <img src="screenshots/widget-iphone.jpg" width="140">
 
-<img src="screenshots/widget-iphone.jpg" width="120">
+</p>
 
 ## Installation manuelle
